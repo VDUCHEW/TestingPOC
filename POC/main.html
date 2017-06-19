@@ -1,0 +1,243 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<title>Jumio Test Page</title>
+	<style type="text/css">
+		body { font-family: Helvetica, sans-serif; }
+		h2, h3 { margin-top:0; }
+		form { margin-top: 15px; }
+		form input { margin-right: 15px; }
+		#results { float:right; margin:20px; padding:20px; border:1px solid; background:#ccc; }
+		#my-canvas{ display:none; width: 320px; height: 240px; }
+	</style>
+</head>
+<body>
+	<div id="results">Your ID will appear here...</div>
+	
+	<h1>Jumio Test Page</h1>
+	<h3>Scan the front of your Driver's Licence</h3>
+	
+	<div id="my_camera"></div>
+	
+	<!-- First, include the Webcam.js JavaScript Library -->
+	<script type="text/javascript" src="../webcam.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+	<!-- Configure a few settings and attach camera -->
+	<script language="JavaScript">
+		Webcam.set({
+			width: 320,
+			height: 240,
+			image_format: 'jpeg',
+			jpeg_quality: 100
+		});
+		Webcam.attach( '#my_camera' );
+	</script>
+	
+	<!-- A button for taking snaps -->
+	<form>
+		<div id="pre_take_buttons">
+			<input type=button value="Take Snapshot" onClick="preview_snapshot()"/>
+		</div>
+		<div id="post_take_buttons" style="display:none">
+			<input type=button value="&lt; Take Another" onClick="cancel_preview()"/>
+			<input type=button value="Save Photo &gt;" onClick="save_photo()" style="font-weight:bold"/>
+		</div>
+		<div>
+			<input type="file" id="fileUpdater" onchange="upload_image(event)"/>
+		</div>
+	</form>
+	<canvas id="my-canvas"></canvas>
+	<!-- Code to handle taking the snapshot and displaying it locally -->
+	<script language="JavaScript">
+
+		function upload_image(event) {
+
+//===================================================== Original format
+//          var file    = event.target.files[0];
+//          var reader  = new FileReader();
+//
+//          reader.addEventListener("load", function () {
+//
+//          var base64File = reader.result;
+//			var splitBase64 = base64File.split("base64,");
+//
+//            $.ajax({
+//              type: "POST",
+//              dataType: 'json',
+//              headers: {
+//                "Authorization": "Basic YWI4MjEyNjItOTc2NC00ZDk5LWJlZGQtZGRmYmM1MjdjZDY5Okp2NFBoU2N2aldEdnA5ZlBiTVJmRGhFc0pua3hTcTNt",
+//                "User-Agent": "JumioCorp WalmartTest/1.0",
+//                'Accept': 'application/json',
+//                'Content-Type': 'application/json'
+//              },
+//              url: "https://netverify.com/api/netverify/v2/fastfill",
+//              data: JSON.stringify({
+//                "type":"DRIVING_LICENSE",
+//                "country":"USA",
+//                "frontsideImage": splitBase64[1]
+//              }),
+//              success: function(data) {
+//                location.href = "http://localhost:63342/jumioPOC/POC/success.html";
+//                $("#success_page").append("The result are:" + JSON.stringify(data));
+//              },
+//              error: function() {
+//                alert("The API FAILED. Try Again...");
+//              }
+//            });
+//          }, false);
+//
+//          if (file) {
+//            reader.readAsDataURL(file);
+//          }
+//          if(!event) return;
+//          if(!file) return false;
+
+//===================================================== Linda's suggestion
+			var form = new FormData();
+			form.append("metadata", "{\"type\":\"DRIVING_LICENSE\", \"country\":\"USA\"}");
+			form.append("frontsideImage", {});
+
+			var settings = {
+				"async": true,
+				"crossDomain": true,
+				"url": "https://netverify.com/api/netverify/v2/fastfill",
+				"method": "POST",
+				"headers": {
+					"authorization": "Basic NTgyZTg2ZDQtZDBmNi00ZmViLTlkYTktN2E1ODUwMjdlNDg4OlNMMnNya2VDNUdaUjd2U2NkMTJxbE9HZ2c3NDNYbU5N",
+					"user-agent": "JumioCorp WalmartTest/1.0",
+					"accept": "application/json",
+					"cache-control": "no-cache",
+					"postman-token": "c28375f1-039e-1070-257c-7383716c15bc"
+				},
+				"processData": false,
+				"contentType": false,
+				"mimeType": "multipart/form-data",
+				"data": form
+			};
+
+          $.ajax(settings).done(function (response) {
+            console.log(response);
+          });
+//=====================================================
+		}
+
+		function preview_snapshot() {
+			// freeze camera so user can preview pic
+			Webcam.freeze();
+			
+			// swap button sets
+			document.getElementById('pre_take_buttons').style.display = 'none';
+			document.getElementById('post_take_buttons').style.display = '';
+		}
+		
+		function cancel_preview() {
+			// cancel preview freeze and return to live camera feed
+			Webcam.unfreeze();
+			
+			// swap buttons back
+			document.getElementById('pre_take_buttons').style.display = '';
+			document.getElementById('post_take_buttons').style.display = 'none';
+		}
+		
+		function save_photo() {
+			// actually snap photo (from preview freeze) and display it
+			Webcam.snap( function(data_uri) {
+				// display results in page
+				document.getElementById('results').innerHTML = 
+					`<h2>Driver Licence:</h2>
+					<img id="img-tag" src="${data_uri}"/>
+					<form action="http://localhost:63342/" method="post" enctype="multipart/form-data">
+						<input type="button" value="Save photo in Desktop" onClick="saveImage()"/>
+						<input type="button" value="Send to NetVerify" onClick="callNetVerify()"/>
+					</form>`;
+				
+				// swap buttons back
+				document.getElementById('pre_take_buttons').style.display = '';
+				document.getElementById('post_take_buttons').style.display = 'none';
+			} );
+		}
+
+        function saveImage() {
+		  const canvas = document.getElementById("my-canvas");
+		  const ctx = canvas.getContext("2d");
+          ctx.canvas.width  = 320;
+          ctx.canvas.height = 240;
+		  const img = document.getElementById("img-tag");
+          ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
+
+//          console.log(canvas.toDataURL("image/png"));
+//          window.open(canvas.toDataURL('image/png', 1.0));
+
+          const convertedImg = canvas.toDataURL("image/png", 1.0);
+          const a  = document.createElement('a');
+          a.href = convertedImg;
+          a.download = 'image.png';
+          a.click()
+        }
+
+        function callNetVerify() {
+		  const canvas = document.getElementById("my-canvas");
+		  const ctx = canvas.getContext("2d");
+          ctx.canvas.width  = 320;
+          ctx.canvas.height = 240;
+		  const img = document.getElementById("img-tag");
+          ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
+
+          const base64Img = canvas.toDataURL("image/png");
+          var splitBase64 = base64Img.split("base64,");
+          console.log(splitBase64[1]);
+
+//=====================================================NetVerify
+          $.ajax({
+            type: "POST",
+            headers: {
+              "Authorization": "Basic YWI4MjEyNjItOTc2NC00ZDk5LWJlZGQtZGRmYmM1MjdjZDY5Okp2NFBoU2N2aldEdnA5ZlBiTVJmRGhFc0pua3hTcTNt",
+              "User-Agent": "walmart walmart/1.0.0",
+			  "Accept": "application/json",
+			  "Content-Type": "application/json"
+            },
+            url: "https://netverify.com/api/netverify/v2/performNetverify",
+            data: {
+              "merchantIdScanReference": "TestScanReference",
+              "frontsideImage": splitBase64[1],
+              "successUrl": "https://hookb.in/E7R0BeW8",
+              "errorUrl": console.log("NETVERIFY CALL FAILED")
+            },
+            success: function(data) {
+              location.href = "http://localhost:63342/jumioPOC/POC/success.html";
+              $("#success_page").append("The result are:" + JSON.stringify(data));
+            },
+            error: function() {
+              alert("The API FAILED. Try Again...");
+            }
+          });
+
+//=====================================================Postman suggestion
+//          var settings = {
+//            "async": true,
+//            "crossDomain": true,
+//            "url": "https://netverify.com/api/netverify/v2/performNetverify",
+//            "method": "POST",
+//            "headers": {
+//              "user-agent": "walmart walmart/1.0.0",
+//              "accept": "application/json",
+//              "content-type": "application/json",
+//              "authorization": "Basic YWI4MjEyNjItOTc2NC00ZDk5LWJlZGQtZGRmYmM1MjdjZDY5Okp2NFBoU2N2aldEdnA5ZlBiTVJmRGhFc0pua3hTcTNt",
+//              "cache-control": "no-cache",
+//              "postman-token": "d7cf84ea-3367-1061-bf68-a2f2b9788161"
+//            },
+//            "processData": false,
+//            "data": "{\n\"merchantIdScanReference\": \"TestScanReference\",\n\"frontsideImage\":" + splitBase64[1] + ",\n  \"successUrl\": \"https://hookb.in/E7R0BeW8\",\n\"errorUrl\": \"https://www.google.com/maps\"\n}"
+//          };
+//
+//          $.ajax(settings).done(function (response) {
+//            console.log(response);
+//          });
+//=====================================================
+	    }
+	</script>
+</body>
+</html>
