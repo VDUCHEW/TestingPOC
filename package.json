@@ -1,0 +1,12 @@
+{
+  "name": "jumio-POC",
+  "version": "0.0.1",
+  "dependencies": {
+    "body-parser": "^1.8.1",
+    "connect-busboy": "0.0.2",
+    "express": "^4.9.0",
+    "fs-extra": "^3.0.1",
+    "request": "^2.81.0",
+    "webcamjs": "^1.0.22"
+  }
+}
