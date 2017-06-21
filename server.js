@@ -6,7 +6,7 @@ var multer = require('multer');
 var upload = multer({});
 
 var app = express();
-app.get('/',function(req,res){
+app.get('/',function(req,res) {
   res.sendFile(path.join(__dirname + "/index.html"));
 });
 
@@ -15,7 +15,7 @@ app.use(bodyParser.urlencoded({
 }));
 
 // ===============================================================> FASTFILL
-app.post('/fastfill', (req, res) => {
+app.post('/fastfill', function(req, res) {
   var formData = req.body.form;
   console.log('form data =================>', formData);
   // console.log('form data', req);
@@ -33,8 +33,10 @@ app.post('/fastfill', (req, res) => {
         authorization: 'Basic YWI4MjEyNjItOTc2NC00ZDk5LWJlZGQtZGRmYmM1MjdjZDY5Okp2NFBoU2N2aldEdnA5ZlBiTVJmRGhFc0pua3hTcTNt',
         accept: 'application/json',
         'user-agent': 'JumioCorp WalmartTest/1.0',
-        'content-type': 'multipart/form-data; boundary=----WebKitFormBoundary7MA4YWxkTrZu0gW' },
-    formData: formData };
+        'content-type': 'multipart/form-data; boundary=----WebKitFormBoundary7MA4YWxkTrZu0gW'
+      },
+    formData: formData
+  };
 
   request(options, function (error, response, body) {
     if (error) throw new Error(error);
@@ -43,8 +45,8 @@ app.post('/fastfill', (req, res) => {
   });
 
 });
-// ================================================================> NETVERIFY
 
+// ================================================================> NETVERIFY
 app.post('/netverify', function(request, response) {
   // var form = request.body.form;
   var options = { method: 'POST',
@@ -70,10 +72,7 @@ app.post('/netverify', function(request, response) {
     if (error) throw new Error(error);
     console.log(body);
   });
-
-  response.end();
 });
-
 
 app.listen(3000,function() {
   console.log("Started on PORT 3000");
