@@ -1,29 +1,20 @@
 var express = require("express");
 var request = require("request");
 var path = require('path');
-var bodyParser = require('body-parser')
 var multer = require('multer');
-var upload = multer({});
+var upload = multer();
 
 var app = express();
 app.get('/',function(req,res) {
   res.sendFile(path.join(__dirname + "/index.html"));
 });
 
-app.use(bodyParser.urlencoded({
-  extended: true
-}));
 
 // ===============================================================> FASTFILL
 app.post('/fastfill', function(req, res) {
-  var formData = req.body.form;
-  console.log('form data =================>', formData);
-  // console.log('form data', req);
+  var formData = upload.fields([{ name: 'fileUpdater'}]);
+  console.log('form data =======================>', formData);
   // console.log('form data', res);
-
-  res.sendStatus(200);
-
-  var request = require("request");
 
   var options = { method: 'POST',
     url: 'https://netverify.com/api/netverify/v2/fastfill',
@@ -35,15 +26,13 @@ app.post('/fastfill', function(req, res) {
         'user-agent': 'JumioCorp WalmartTest/1.0',
         'content-type': 'multipart/form-data; boundary=----WebKitFormBoundary7MA4YWxkTrZu0gW'
       },
-    formData: formData
+    formData: {}
   };
 
   request(options, function (error, response, body) {
     if (error) throw new Error(error);
-
     console.log(body);
   });
-
 });
 
 // ================================================================> NETVERIFY
