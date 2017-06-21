@@ -1,55 +1,49 @@
 var express = require("express");
 var request = require("request");
 var path = require('path');
-
-var busboy = require('connect-busboy');
-var fs = require('fs-extra');
+var bodyParser = require('body-parser')
+var multer = require('multer');
+var upload = multer({});
 
 var app = express();
-app.use(busboy());
 app.get('/',function(req,res){
   res.sendFile(path.join(__dirname + "/index.html"));
 });
 
-app.post('/fastfill',function(request, response) {
-  console.log("req =========================>", request);
-  console.log("res =========================>", response);
+app.use(bodyParser.urlencoded({
+  extended: true
+}));
 
-  var fstream;
-  request.pipe(request.busboy);
-  request.busboy.on('file', function (fieldname, file, filename) {
-    console.log("Uploading: " + filename);
+// ===============================================================> FASTFILL
+app.post('/fastfill', (req, res) => {
+  var formData = req.body.form;
+  console.log('form data =================>', formData);
+  // console.log('form data', req);
+  // console.log('form data', res);
 
-    //Path where image will be uploaded
-    fstream = fs.createWriteStream(__dirname + filename);
-    file.pipe(fstream);
-    fstream.on('close', function () {
-      console.log("Upload Finished of " + filename);
-      response.redirect('back');           //where to go next
-    });
-  });
+  res.sendStatus(200);
 
-  var options = {
-    method: 'POST',
+  var request = require("request");
+
+  var options = { method: 'POST',
     url: 'https://netverify.com/api/netverify/v2/fastfill',
     headers:
-      {
-        'postman-token': '109d42c5-f58e-1204-85ca-3c5caed4e841',
+      { 'postman-token': 'af169a84-4ad1-c528-b3ef-cd3b4e70bbec',
         'cache-control': 'no-cache',
         authorization: 'Basic YWI4MjEyNjItOTc2NC00ZDk5LWJlZGQtZGRmYmM1MjdjZDY5Okp2NFBoU2N2aldEdnA5ZlBiTVJmRGhFc0pua3hTcTNt',
         accept: 'application/json',
         'user-agent': 'JumioCorp WalmartTest/1.0',
-        'content-type': 'multipart/form-data; boundary=----WebKitFormBoundary7MA4YWxkTrZu0gW'
-      }
-  };
+        'content-type': 'multipart/form-data; boundary=----WebKitFormBoundary7MA4YWxkTrZu0gW' },
+    formData: formData };
 
   request(options, function (error, response, body) {
     if (error) throw new Error(error);
+
     console.log(body);
   });
 
-  response.end();
 });
+// ================================================================> NETVERIFY
 
 app.post('/netverify', function(request, response) {
   // var form = request.body.form;

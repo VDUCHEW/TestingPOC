@@ -57,13 +57,20 @@
     form.append("metadata", "{\"type\":\"DRIVING_LICENSE\", \"country\":\"USA\"}");
     form.append("frontsideImage", $('#fileUpdater')[0].files[0]);
 
-    $.post("http://localhost:3000/fastfill", {
-      form: "SFDSFF"
-    }, function(data) {
-      if (data === 'done') {
-        $("#success_results").append(data);
-        console.log(data)
-      }
+    const settings = {
+      "async": true,
+      "crossDomain": true,
+      "url": "http://localhost:3000/fastfill",
+      "method": "POST",
+      "processData": false,
+      "contentType": false,
+      "mimeType": "multipart/form-data",
+      "data": form
+    };
+
+    $.ajax(settings).done(function (response) {
+      $("#success_results").append(response);
+      console.log(response)
     });
   }
 
