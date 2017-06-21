@@ -47,8 +47,9 @@ app.post('/fastfill', function(req, res) {
 });
 
 // ================================================================> NETVERIFY
-app.post('/netverify', function(request, response) {
+app.post('/netverify', function(req, res) {
   // var form = request.body.form;
+
   var options = { method: 'POST',
     url: 'https://netverify.com/api/netverify/v2/performNetverify',
     headers:
