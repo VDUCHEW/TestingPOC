@@ -45,8 +45,8 @@
         <input type=button value="Save Photo &gt;" onClick="save_photo()" style="font-weight:bold"/>
     </div>
     <div id="post-calls">
-        <input type="file" id="fileUpdater" onchange="upload_image()"/>
-        <input type="submit" id="mySubmit" onclick="upload_image()">
+        <input type="file" class="fileUpdater"/>
+        <button  type="button" class="fileUpdater" onclick="upload_image()">Submit</button>
     </div>
     <div id="success_results"></div>
 </form>
@@ -58,12 +58,14 @@
   function upload_image() {
     const form = new FormData();
     form.append("metadata", "{\"type\":\"DRIVING_LICENSE\", \"country\":\"USA\"}");
-    form.append("frontsideImage", $('#fileUpdater')[0].files[0]);
+    form.append("frontsideImage", $('.fileUpdater')[0].files[0]);
 
     const settings = {
       "async": true,
       "crossDomain": true,
-      "url": "http://localhost:3000/fastfill",
+
+      //changed for mobile. url:https://localhost:3000/fastfill
+      "url": "/fastfill",
       "method": "POST",
       "processData": false,
       "contentType": false,
@@ -154,20 +156,21 @@
       "url": "http://localhost:3000/netverify",
       "method": "POST",
       "processData": false,
-      "data": `{
-        merchantIdScanReference: TestScanReference,
-        frontsideImage: ${fakeID},
-        successUrl: https://hookb.in/E7R0BeW8,
-        errorUrl: https://hookb.in/E7R0BeW8,
-        callbackUrl: https://requestb.in/wbvffiwb,
-        idtype: DRIVING_LICENSE,
-        country:USA
-      }`
+      "data": {
+        "merchantIdScanReference": "TestScanReference",
+        "frontsideImage": stringedBase64,
+        "successUrl": "https://hookb.in/E7R0BeW8",
+        "errorUrl": "https://hookb.in/E7R0BeW8",
+        "callbackUrl": "https://requestb.in/wbvffiwb",
+        "idtype": "DRIVING_LICENSE",
+        "country": "USA"
+      }
     };
 
     $.ajax(settings).done(function (response) {
       $("#success_results").append(response);
-      console.log(response)
+      console.log(response);
+      response.status(200).end();
     });
   }
 </script>
