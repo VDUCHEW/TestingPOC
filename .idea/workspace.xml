@@ -25,26 +25,30 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
+      <file leaf-file-name="index.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="511">
-              <caret line="163" column="24" lean-forward="true" selection-start-line="163" selection-start-column="24" selection-end-line="163" selection-end-column="24" />
+            <state relative-caret-position="231">
+              <caret line="75" column="69" lean-forward="true" selection-start-line="75" selection-start-column="69" selection-end-line="75" selection-end-column="69" />
               <folding>
                 <element signature="n#style#0;n#div#1;n#form#0;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#input#1;n#div#1;n#form#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="e#4829#135651#0" expanded="false" />
-                <marker date="1498167921000" expanded="true" signature="3388:3593" ph="..." />
+                <element signature="n#style#0;n#button#0;n#div#5;n#form#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#i#0;n#div#7;n#form#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="e#7338#138160#0" expanded="false" />
+                <marker date="1498256496000" expanded="true" signature="4093:4147" ph="..." />
+                <marker date="1498256496000" expanded="true" signature="4093:4872" ph="..." />
+                <marker date="1498256496000" expanded="true" signature="5831:6036" ph="..." />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="server.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="server.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/server.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="402">
-              <caret line="69" column="14" lean-forward="true" selection-start-line="69" selection-start-column="14" selection-end-line="69" selection-end-column="14" />
+            <state relative-caret-position="597">
+              <caret line="44" column="19" lean-forward="true" selection-start-line="44" selection-start-column="19" selection-end-line="44" selection-end-column="19" />
               <folding />
             </state>
           </provider>
@@ -54,12 +58,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>my_camera</find>
-      <find>success_results</find>
-      <find>logi</find>
-      <find>login</find>
-      <find>sendfile</find>
-      <find>req</find>
       <find>res.sendfile</find>
       <find>res</find>
       <find>request</find>
@@ -74,14 +72,32 @@
       <find>storage</find>
       <find>frontsideImage</find>
       <find>img-tag</find>
+      <find>/</find>
       <find>upload_image</find>
       <find>fileUpdater</find>
-      <find>/</find>
+      <find>fillUpdater</find>
+      <find>pre_take_buttons</find>
+      <find>success_results</find>
+      <find>innerHTMLinnerHTML</find>
+      <find>innerHTML</find>
+      <find>parsedRespone</find>
+      <find>inner</find>
+      <find>results</find>
+      <find>document.getElementById('results').innerHTML =         `&lt;h2&gt;Driver Licence:&lt;/h2&gt;         &lt;img id=&quot;img-tag&quot; src=&quot;${data_uri}&quot;/&gt;         &lt;form&gt;             &lt;input type=&quot;button&quot; value=&quot;Save photo in Desktop&quot; onClick=&quot;saveImage()&quot;/&gt;             &lt;input type=&quot;button&quot; id=&quot;netverify&quot; value=&quot;Send to NetVerify&quot; onClick=&quot;callNetVerify()&quot;/&gt;         &lt;/form&gt;`;</find>
+      <find>pa</find>
+      <find>,</find>
+      <find>}</find>
+      <find>upload_backsideImage</find>
     </findStrings>
     <replaceStrings>
       <replace>request</replace>
       <replace>response</replace>
       <replace>':</replace>
+      <replace>upload_frontsideImage</replace>
+      <replace>parsedResponse</replace>
+      <replace>${pa</replace>
+      <replace>}</replace>
+      <replace>}&lt;br&gt;</replace>
     </replaceStrings>
     <dirStrings>
       <dir>$PROJECT_DIR$</dir>
@@ -95,8 +111,8 @@
       <list>
         <option value="$PROJECT_DIR$/../get-post-handle-express-master/index.html" />
         <option value="$PROJECT_DIR$/package.json" />
-        <option value="$PROJECT_DIR$/index.html" />
         <option value="$PROJECT_DIR$/server.js" />
+        <option value="$PROJECT_DIR$/index.html" />
       </list>
     </option>
   </component>
@@ -298,12 +314,12 @@
       <option name="presentableId" value="Default" />
       <updated>1497846653618</updated>
       <workItem from="1497846655036" duration="53117000" />
-      <workItem from="1498085402591" duration="15602000" />
+      <workItem from="1498085402591" duration="30504000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="68719000" />
+    <option name="totallyTimeSpent" value="83621000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-1920" y="23" width="1920" height="1177" extended-state="6" />
@@ -311,12 +327,12 @@
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.08478146" sideWeight="0.4967742" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3299539" sideWeight="0.5018431" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.37142858" sideWeight="0.50394946" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3299539" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24960506" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.37142858" sideWeight="0.49815693" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.37142858" sideWeight="0.49605057" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.16400427" sideWeight="0.5032258" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -335,7 +351,7 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="4" />
+      <option name="time" value="5" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -347,8 +363,12 @@
           <folding>
             <element signature="n#style#0;n#div#1;n#form#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#input#1;n#div#1;n#form#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="e#4829#135651#0" expanded="false" />
-            <marker date="1498167921000" expanded="true" signature="3388:3593" ph="..." />
+            <element signature="n#style#0;n#button#0;n#div#5;n#form#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#i#0;n#div#7;n#form#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="e#7338#138160#0" expanded="false" />
+            <marker date="1498256496000" expanded="true" signature="4093:4147" ph="..." />
+            <marker date="1498256496000" expanded="true" signature="4093:4872" ph="..." />
+            <marker date="1498256496000" expanded="true" signature="5831:6036" ph="..." />
           </folding>
         </state>
       </provider>
@@ -422,24 +442,28 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/index.html">
+    <entry file="file://$PROJECT_DIR$/server.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="511">
-          <caret line="163" column="24" lean-forward="true" selection-start-line="163" selection-start-column="24" selection-end-line="163" selection-end-column="24" />
-          <folding>
-            <element signature="n#style#0;n#div#1;n#form#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#input#1;n#div#1;n#form#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="e#4829#135651#0" expanded="false" />
-            <marker date="1498167921000" expanded="true" signature="3388:3593" ph="..." />
-          </folding>
+        <state relative-caret-position="597">
+          <caret line="44" column="19" lean-forward="true" selection-start-line="44" selection-start-column="19" selection-end-line="44" selection-end-column="19" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/server.js">
+    <entry file="file://$PROJECT_DIR$/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="402">
-          <caret line="69" column="14" lean-forward="true" selection-start-line="69" selection-start-column="14" selection-end-line="69" selection-end-column="14" />
-          <folding />
+        <state relative-caret-position="231">
+          <caret line="75" column="69" lean-forward="true" selection-start-line="75" selection-start-column="69" selection-end-line="75" selection-end-column="69" />
+          <folding>
+            <element signature="n#style#0;n#div#1;n#form#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#input#1;n#div#1;n#form#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#button#0;n#div#5;n#form#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#i#0;n#div#7;n#form#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="e#7338#138160#0" expanded="false" />
+            <marker date="1498256496000" expanded="true" signature="4093:4147" ph="..." />
+            <marker date="1498256496000" expanded="true" signature="4093:4872" ph="..." />
+            <marker date="1498256496000" expanded="true" signature="5831:6036" ph="..." />
+          </folding>
         </state>
       </provider>
     </entry>

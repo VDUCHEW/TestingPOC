@@ -1,17 +1,23 @@
 <html>
 
 <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <title>Jumio Test Page</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <style type="text/css">
         body { font-family: Helvetica, sans-serif; }
-        h2, h3 { margin-top:0; }
+        h2, h3 { margin:0 0; }
         form { margin-top: 15px; }
-        form input { margin-right: 15px; font-size: 12px; }
-        #results { float:right; margin:20px; padding:20px; border:1px solid; background:#ccc; }
+        form input { padding-top: 10px; margin-right: 15px; font-size: 20px; }
+        #results { float:right; margin:20px; padding:20px; border:1px solid; background:#ccc; display: none}
         #my-canvas{ display:none; width: 320px; height: 240px; }
-        #success_results { margin-top: 20px; }
-        #post-calls { margin-top: 40px; }
+        #success_results { margin-top: 20px; font-size: 24px}
+        .post-calls { margin-top: 30px; }
+        #spinner { margin-top: 20px; display: none}
+        #img-tag { padding-bottom: 20px }
+        input[type="file"] { display: none; }
+        #custom-file-upload-1 {border: 2px solid black; display: inline-block; padding: 10px 40px; cursor: pointer; border-radius: 25px;}
+        #custom-file-upload-2 {border: 2px solid black; display: inline-block; padding: 10px 40px; cursor: pointer; border-radius: 25px;}
     </style>
     <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/webcamjs/1.0.22/webcam.min.js"></script>
@@ -19,9 +25,7 @@
 
 <body>
 
-<div id="results">Your ID will appear here...</div>
 <h1>Jumio Test Page</h1>
-<h3>Scan the front of your Driver's Licence</h3>
 <div id="my_camera"></div>
 
 <script language="JavaScript">
@@ -34,8 +38,8 @@
   Webcam.attach('#my_camera');
 </script>
 
-<!-- A button for taking snaps -->
 
+<!-- A button for taking snaps -->
 <form method="post" enctype="multipart/form-data">
     <div id="pre_take_buttons">
         <input type=button value="Take Snapshot" onClick="preview_snapshot()"/>
@@ -44,21 +48,41 @@
         <input type=button value="&lt; Take Another" onClick="cancel_preview()"/>
         <input type=button value="Save Photo &gt;" onClick="save_photo()" style="font-weight:bold"/>
     </div>
-    <div id="post-calls">
-        <input type="file" class="fileUpdater"/>
-        <button  type="button" class="fileUpdater" onclick="upload_image()">Submit</button>
+    <div id="results">Your ID will appear here...</div>
+    <div class="post-calls">
+        <h3>Scan the FRONT of the Driver's License</h3><br>
+        <label id="custom-file-upload-1">
+            Upload file here
+            <input type="file" id="upload_frontsideImage" onchange="updateStatus1()"/>
+        </label>
+    </div>
+    <div class="post-calls">
+        <h3>Scan the BARCODE on the backside</h3><br>
+        <label id="custom-file-upload-2" >
+            Upload file here
+            <input type="file" id="upload_backsideImage" onchange="updateStatus2()"/>
+        </label>
+    </div>
+    <div class="post-calls">
+        <button  type="button" onclick="uploadImage()" style="font-size: 45px">Submit</button>
     </div>
     <div id="success_results"></div>
+    <div id="spinner">
+        <p>Loading:</p> <i class="fa fa-circle-o-notch fa-spin" style="font-size: 150px"></i>
+    </div>
 </form>
 <canvas id="my-canvas"></canvas>
 
 <!-- Code to handle taking the snapshot and displaying it locally -->
 <script language="JavaScript">
-
-  function upload_image() {
+  function uploadImage() {
     const form = new FormData();
+    const frontImage = $('#upload_frontsideImage')[0].files[0];
     form.append("metadata", "{\"type\":\"DRIVING_LICENSE\", \"country\":\"USA\"}");
-    form.append("frontsideImage", $('.fileUpdater')[0].files[0]);
+    frontImage ? form.append("frontsideImage", $('#upload_frontsideImage')[0].files[0])
+      : form.append("frontsideImage", $('#upload_backsideImage')[0].files[0]);
+
+    document.getElementById('spinner').style.display = 'block';
 
     const settings = {
       "async": true,
@@ -74,8 +98,29 @@
     };
 
     $.ajax(settings).done(function (response) {
+      document.getElementById('spinner').style.display = 'none';
+      const parsedResponse = JSON.parse(response);
+      const result = document.getElementById('results').innerHTML =
+        `<div>
+            <h3>Results:</h3><br>
+            City: ${parsedResponse.city}<br>
+            DOB: ${parsedResponse.dob}<br>
+            Expiry: ${parsedResponse.expiry}<br>
+            First Name: ${parsedResponse.firstName}<br>
+            Last Name: ${parsedResponse.lastName}<br>
+            Gender: ${parsedResponse.gender}<br>
+            Issue Date: ${parsedResponse.issueDate}<br>
+            Issuing Country: ${parsedResponse.issuingCountry}<br>
+            Number: ${parsedResponse.number}<br>
+            Postal Code: ${parsedResponse.postalCode}<br>
+            Scan Reference: ${parsedResponse.scanReference}<br>
+            State: ${parsedResponse.state}<br>
+            Street: ${parsedResponse.street}<br>
+            Type: ${parsedResponse.type}<br>
+        </div>`;
+
       $("#success_results").append(response);
-      console.log(response)
+      console.log(parsedResponse)
     });
   }
 
@@ -108,6 +153,7 @@
             <input type="button" value="Save photo in Desktop" onClick="saveImage()"/>
             <input type="button" id="netverify" value="Send to NetVerify" onClick="callNetVerify()"/>
         </form>`;
+      document.getElementById('results').style.display = 'block';
 
       // swap buttons back
       document.getElementById('pre_take_buttons').style.display = '';
@@ -173,6 +219,17 @@
       response.status(200).end();
     });
   }
+
+  function updateStatus1() {
+    document.getElementById('custom-file-upload-1').style.background = "rgb(0, 128, 0)";
+    document.getElementById('custom-file-upload-1').style.color = "rgb(255, 255, 255)";
+  }
+
+  function updateStatus2() {
+    document.getElementById('custom-file-upload-2').style.background = "rgb(0, 128, 0)";
+    document.getElementById('custom-file-upload-2').style.color = "rgb(255, 255, 255)";
+  }
+
 </script>
 
 </body>

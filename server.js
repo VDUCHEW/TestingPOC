@@ -13,7 +13,7 @@ app.use(bodyParser.json({limit: '100mb'}));
 app.use(bodyParser.urlencoded({limit: '100mb', extended: true, parameterLimit: 50000}));
 
 app.post('/fastfill', upload.single('frontsideImage'), function (req, res) {
-  console.log("REQ ==============================>", req);
+  // console.log("REQ ==============================>", req);
 
   var form = {
     'metadata': req.body['metadata'],
@@ -39,9 +39,9 @@ app.post('/fastfill', upload.single('frontsideImage'), function (req, res) {
   };
 
   request(options, function (error, response, body) {
-    console.log("RESPONSE ERROR======================>", error);
+    // console.log("RESPONSE ERROR======================>", error);
     if (error) throw new Error(error);
-    console.log("RESPONSE BODY=======================>", body);
+    // console.log("RESPONSE BODY=======================>", body);
     res.send(body);
   });
 });
