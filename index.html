@@ -80,16 +80,17 @@
     const frontImage = $('#upload_frontsideImage')[0].files[0];
     form.append("metadata", "{\"type\":\"DRIVING_LICENSE\", \"country\":\"USA\"}");
     frontImage ? form.append("frontsideImage", $('#upload_frontsideImage')[0].files[0])
-      : form.append("frontsideImage", $('#upload_backsideImage')[0].files[0]);
+      : form.append("backsideImage", $('#upload_backsideImage')[0].files[0]);
 
     document.getElementById('spinner').style.display = 'block';
+    const fastFillURl = frontImage ? "/fastfill_front" : "/fastfill_back";
 
     const settings = {
       "async": true,
       "crossDomain": true,
 
       //changed for mobile. url:https://localhost:3000/fastfill
-      "url": "/fastfill",
+      "url": fastFillURl,
       "method": "POST",
       "processData": false,
       "contentType": false,
@@ -119,8 +120,8 @@
             Type: ${parsedResponse.type}<br>
         </div>`;
 
-      $("#success_results").append(response);
-      console.log(parsedResponse)
+      $("#success_results").append(result);
+      console.log(response)
     });
   }
 

@@ -12,9 +12,39 @@ app.get('/', function (req, res) {
 app.use(bodyParser.json({limit: '100mb'}));
 app.use(bodyParser.urlencoded({limit: '100mb', extended: true, parameterLimit: 50000}));
 
-app.post('/fastfill', upload.single('frontsideImage'), function (req, res) {
-  // console.log("REQ ==============================>", req);
+app.post('/fastfill_front', upload.single('frontsideImage'), function (req, res) {
+  var form = {
+    'metadata': req.body['metadata'],
+    'frontsideImage': {
+      value: req.file.buffer,
+      options: {
+        filename: req.file.originalname,
+        contentType: req.file.mimetype
+      }
+    }
+  };
 
+  var options = {
+    method: 'POST',
+    url: 'https://netverify.com/api/netverify/v2/fastfill',
+    headers: {
+      'postman-token': 'af169a84-4ad1-c528-b3ef-cd3b4e70bbec',
+      'cache-control': 'no-cache',
+      'authorization': 'Basic YWI4MjEyNjItOTc2NC00ZDk5LWJlZGQtZGRmYmM1MjdjZDY5Okp2NFBoU2N2aldEdnA5ZlBiTVJmRGhFc0pua3hTcTNt',
+      'user-agent': 'JumioCorp WalmartTest/1.0'
+    },
+    formData: form
+  };
+
+  request(options, function (error, response, body) {
+    // console.log("RESPONSE ERROR======================>", error);
+    if (error) throw new Error(error);
+    // console.log("RESPONSE BODY=======================>", body);
+    res.send(body);
+  });
+});
+
+app.post('/fastfill_back', upload.single('backsideImage'), function (req, res) {
   var form = {
     'metadata': req.body['metadata'],
     'frontsideImage': {
