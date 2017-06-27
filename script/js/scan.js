@@ -23,7 +23,6 @@ function uploadImage() {
     document.getElementById('spinner').style.display = 'none';
     document.getElementById('index-banner').style.display = 'none';
     const parsedResponse = JSON.parse(response);
-    const stateValue = parsedResponse.street;
 
     console.log(parsedResponse);
 
@@ -33,11 +32,11 @@ function uploadImage() {
             <div class="center row">
               <div class="input-field col s12">
                 <input type="text" class="validate" value=${parsedResponse.firstName}>
-                <label class="active" class="active" for="first_name">First Name</label>
+                <label class="active" class="active">First Name</label>
               </div>
               <div class="input-field col s12">
                 <input type="text" class="validate" value=${parsedResponse.lastName}>
-                <label class="active" for="last_name">Last Name</label>
+                <label class="active">Last Name</label>
               </div>
               <div class="input-field col s6">
                 <input type="text" class="validate" value=${parsedResponse.dob}>
@@ -52,15 +51,15 @@ function uploadImage() {
                 <label class="active" for="expiration_date">Expiration Date</label>
               </div>
               <div class="input-field col s12">
-                <input type="text" class="validate" value=${parsedResponse.street}>
-                <label class="active" for="street">Street</label>
+                <input type="text" id="street" class="validate" value="">
+                <label class="active">Street</label>
               </div>
               <div class="input-field col s12">
-                <input type="text" class="validate" value=${parsedResponse.city}>
+                <input  type="text" class="validate" value=${parsedResponse.city}>
                 <label class="active" for="city">City</label>
               </div>
               <div class="input-field col s6">
-                <input type="text" class="validate" value=${stateValue}>
+                <input type="text" class="validate" value=${parsedResponse.state}>
                 <label class="active" for="state">State</label>
               </div>
               <div class="input-field col s6">
@@ -74,11 +73,15 @@ function uploadImage() {
             </div>     
           </form>
         </div>
-        <div id="result_wrapper center">
-            <a href="/form-complete" class="btn-large waves-effect waves-light green form-header center">Click to verify</a>       
+        <div class="center">
+            <a href="/form-complete" class="btn-large waves-effect waves-light green form-header center s16">Click to verify information</a>       
         </div>`;
+
+      document.querySelector('#street').value=parsedResponse.street;
   });
 }
+
+
 
 function preview_snapshot() {
   // freeze camera so user can preview pic
