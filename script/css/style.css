@@ -1,0 +1,64 @@
+
+.icon-block {
+  padding: 0 15px;
+}
+.btn-large {
+  min-width: 182px;
+}
+
+/*SCAN*/
+body {
+  font-family: Helvetica, sans-serif;
+}
+h2,
+h3 {
+  margin: 0 0;
+}
+form {
+  margin-top: 15px;
+}
+form input {
+  padding-top: 10px;
+  margin-right: 15px;
+  font-size: 20px;
+}
+#results {
+  float: right;
+  margin: 20px ;
+  padding: 20px;
+  border: 1px solid;
+  background: #ccc;
+  display: none
+}
+#my-canvas {
+  display: none;
+  width: 320px;
+  height: 240px;
+}
+#success_results {
+  font-size: 24px
+}
+.post-calls {
+  margin-top: 30px;
+}
+#spinner {
+  margin-top: 20px;
+  display: none
+}
+#img-tag {
+  padding-bottom: 20px
+}
+input[type="file"] {
+  display: none;
+}
+#custom-file-upload-1 {
+  background-color: grey;
+  color: white;
+}
+#result_wrapper {
+  background: #4CAF50;
+}
+.form-header {
+  display: flex;
+  margin: 0;
+}

@@ -6,9 +6,17 @@ var upload = multer({ storage: multer.memoryStorage() });
 var bodyParser = require("body-parser");
 
 var app = express();
+
+app.use(express.static(path.join(__dirname, 'view')));
+app.use(express.static(path.join(__dirname, "script")));
+
 app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname + "/index.html"));
 });
+app.get('/scan', function (req, res) {
+  res.sendFile(path.join(__dirname + "/view/scan.html"));
+});
+
 app.use(bodyParser.json({limit: '100mb'}));
 app.use(bodyParser.urlencoded({limit: '100mb', extended: true, parameterLimit: 50000}));
 

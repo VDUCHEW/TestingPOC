@@ -1,9 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="64a58352-1149-4f16-a629-10e34b4b4a23" name="Default" comment="">
+    <list default="true" id="64a58352-1149-4f16-a629-10e34b4b4a23" name="Default" comment="&#10;">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/script/css/samsclublogo.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/script/font/material-design-icons/Material-Design-Icons.eot" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/script/font/material-design-icons/Material-Design-Icons.ttf" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/script/font/material-design-icons/Material-Design-Icons.woff" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/script/font/roboto/Roboto-Bold.ttf" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/script/font/roboto/Roboto-Light.ttf" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/script/font/roboto/Roboto-Medium.ttf" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/script/font/roboto/Roboto-Regular.ttf" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/script/font/roboto/Roboto-Thin.ttf" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/script/css/materialize.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/script/css/materialize.min.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/script/css/style.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/script/font/material-design-icons/LICENSE.txt" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/script/font/material-design-icons/Material-Design-Icons.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/script/js/init.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/script/js/materialize.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/script/js/materialize.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/script/js/scan.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/view/scan.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.html" afterPath="$PROJECT_DIR$/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/package.json" afterPath="$PROJECT_DIR$/package.json" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server.js" afterPath="$PROJECT_DIR$/server.js" />
     </list>
     <ignored path="$PROJECT_DIR$/../get-post-handle-express-master/.tmp/" />
@@ -25,21 +45,12 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="index.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="228">
-              <caret line="66" column="94" lean-forward="true" selection-start-line="66" selection-start-column="94" selection-end-line="66" selection-end-column="94" />
-              <folding>
-                <element signature="n#style#0;n#div#1;n#form#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#input#1;n#div#1;n#form#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#button#0;n#div#5;n#form#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#i#0;n#div#7;n#form#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="e#7404#138226#0" expanded="false" />
-                <marker date="1498259506000" expanded="true" signature="4167:4221" ph="..." />
-                <marker date="1498259506000" expanded="true" signature="4167:4946" ph="..." />
-                <marker date="1498259506000" expanded="true" signature="5897:6102" ph="..." />
-              </folding>
+            <state relative-caret-position="210">
+              <caret line="14" column="29" lean-forward="false" selection-start-line="14" selection-start-column="20" selection-end-line="14" selection-end-column="29" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -47,8 +58,58 @@
       <file leaf-file-name="server.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/server.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="28" column="59" lean-forward="true" selection-start-line="28" selection-start-column="59" selection-end-line="28" selection-end-column="59" />
+            <state relative-caret-position="405">
+              <caret line="27" column="16" lean-forward="true" selection-start-line="27" selection-start-column="16" selection-end-line="27" selection-end-column="16" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="scan.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/view/scan.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="450">
+              <caret line="36" column="48" lean-forward="true" selection-start-line="35" selection-start-column="23" selection-end-line="36" selection-end-column="48" />
+              <folding>
+                <element signature="n#style#0;n#i#0;n#div#0;n#div#1;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="scan.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/script/js/scan.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="285">
+              <caret line="33" column="71" lean-forward="false" selection-start-line="33" selection-start-column="60" selection-end-line="33" selection-end-column="71" />
+              <folding>
+                <element signature="n#!!block;n#saveImage#0" expanded="false" />
+                <marker date="1498527433000" expanded="true" signature="1192:1315" ph="..." />
+                <marker date="1498527433000" expanded="true" signature="1355:3718" ph="..." />
+                <marker date="1498527433000" expanded="true" signature="1355:3719" ph="..." />
+                <marker date="1498527433000" expanded="true" signature="1390:3703" ph="..." />
+                <marker date="1498527433000" expanded="true" signature="1427:3680" ph="..." />
+                <marker date="1498527433000" expanded="true" signature="1475:1672" ph="..." />
+                <marker date="1498527433000" expanded="true" signature="1720:1899" ph="..." />
+                <marker date="1498527433000" expanded="true" signature="1946:2108" ph="..." />
+                <marker date="1498527433000" expanded="true" signature="2155:2326" ph="..." />
+                <marker date="1498527433000" expanded="true" signature="2374:2563" ph="..." />
+                <marker date="1498527433000" expanded="true" signature="2611:2782" ph="..." />
+                <marker date="1498527433000" expanded="true" signature="2830:2995" ph="..." />
+                <marker date="1498527433000" expanded="true" signature="3042:3200" ph="..." />
+                <marker date="1498527433000" expanded="true" signature="3247:3432" ph="..." />
+                <marker date="1498527433000" expanded="true" signature="3480:3661" ph="..." />
+                <marker date="1498527433000" expanded="true" signature="4552:4757" ph="..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="style.css" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/script/css/style.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="554">
+              <caret line="62" column="12" lean-forward="false" selection-start-line="62" selection-start-column="12" selection-end-line="62" selection-end-column="12" />
               <folding />
             </state>
           </provider>
@@ -56,38 +117,45 @@
       </file>
     </leaf>
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="JavaScript File" />
+      </list>
+    </option>
+  </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>res</find>
-      <find>request</find>
-      <find>field</find>
-      <find>OK</find>
-      <find>fake`</find>
-      <find>:'</find>
-      <find>\n\&quot;</find>
-      <find>\&quot;</find>
-      <find>form</find>
-      <find>fastfill</find>
-      <find>storage</find>
-      <find>frontsideImage</find>
-      <find>img-tag</find>
-      <find>/</find>
-      <find>upload_image</find>
-      <find>fileUpdater</find>
-      <find>fillUpdater</find>
-      <find>pre_take_buttons</find>
-      <find>success_results</find>
-      <find>innerHTMLinnerHTML</find>
       <find>innerHTML</find>
       <find>parsedRespone</find>
       <find>inner</find>
-      <find>results</find>
       <find>document.getElementById('results').innerHTML =         `&lt;h2&gt;Driver Licence:&lt;/h2&gt;         &lt;img id=&quot;img-tag&quot; src=&quot;${data_uri}&quot;/&gt;         &lt;form&gt;             &lt;input type=&quot;button&quot; value=&quot;Save photo in Desktop&quot; onClick=&quot;saveImage()&quot;/&gt;             &lt;input type=&quot;button&quot; id=&quot;netverify&quot; value=&quot;Send to NetVerify&quot; onClick=&quot;callNetVerify()&quot;/&gt;         &lt;/form&gt;`;</find>
       <find>pa</find>
       <find>,</find>
       <find>}</find>
       <find>upload_backsideImage</find>
       <find>upload_frontsideImage</find>
+      <find>btn-large waves-effect waves-light orange darken-3</find>
+      <find>container</find>
+      <find>#results</find>
+      <find>section</find>
+      <find>orange</find>
+      <find>h1</find>
+      <find>btn-large</find>
+      <find>green</find>
+      <find>font-awesome</find>
+      <find>success_results</find>
+      <find>updateStatus1</find>
+      <find>results</find>
+      <find>woff2</find>
+      <find>?</find>
+      <find>font</find>
+      <find>custom-file-upload-1</find>
+      <find>id=&quot;last_name&quot;</find>
+      <find>s12</find>
+      <find>s10</find>
+      <find>&lt;label</find>
+      <find>spinner</find>
     </findStrings>
     <replaceStrings>
       <replace>request</replace>
@@ -98,9 +166,13 @@
       <replace>${pa</replace>
       <replace>}</replace>
       <replace>}&lt;br&gt;</replace>
+      <replace>s10</replace>
+      <replace>s12</replace>
+      <replace>&lt;label class=&quot;active&quot;</replace>
     </replaceStrings>
     <dirStrings>
       <dir>$PROJECT_DIR$</dir>
+      <dir>$PROJECT_DIR$/public/css</dir>
     </dirStrings>
   </component>
   <component name="Git.Settings">
@@ -111,8 +183,15 @@
       <list>
         <option value="$PROJECT_DIR$/../get-post-handle-express-master/index.html" />
         <option value="$PROJECT_DIR$/package.json" />
+        <option value="$PROJECT_DIR$/css/style.css" />
+        <option value="$PROJECT_DIR$/public/css/style.css" />
+        <option value="$PROJECT_DIR$/scan.html" />
+        <option value="$PROJECT_DIR$/script/font-awesome-4.3.0/css/font-awesome.css" />
         <option value="$PROJECT_DIR$/server.js" />
         <option value="$PROJECT_DIR$/index.html" />
+        <option value="$PROJECT_DIR$/view/scan.html" />
+        <option value="$PROJECT_DIR$/script/js/scan.js" />
+        <option value="$PROJECT_DIR$/script/css/style.css" />
       </list>
     </option>
   </component>
@@ -126,7 +205,7 @@
     <handled-path value="$PROJECT_DIR$/node_modules" />
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="1440" />
+    <option name="x" value="-1920" />
     <option name="y" value="23" />
     <option name="width" value="1920" />
     <option name="height" value="1173" />
@@ -158,6 +237,56 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Jumio_POC" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Jumio_POC_w_Express" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="script" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="js" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Jumio_POC" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Jumio_POC_w_Express" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="script" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Jumio_POC" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Jumio_POC_w_Express" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="script" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="css" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
         </subPane>
       </pane>
       <pane id="Scratches" />
@@ -179,8 +308,17 @@
     <property name="nodejs.mocha.mocha_node_package_dir" value="" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/script/css" />
+      <recent name="$PROJECT_DIR$" />
+      <recent name="$PROJECT_DIR$/view" />
+      <recent name="$PROJECT_DIR$/public" />
+      <recent name="$PROJECT_DIR$/css/js" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$" />
+      <recent name="$PROJECT_DIR$/css" />
+      <recent name="$PROJECT_DIR$/uploads" />
     </key>
   </component>
   <component name="RunManager">
@@ -314,18 +452,19 @@
       <option name="presentableId" value="Default" />
       <updated>1497846653618</updated>
       <workItem from="1497846655036" duration="53117000" />
-      <workItem from="1498085402591" duration="34110000" />
+      <workItem from="1498085402591" duration="34334000" />
+      <workItem from="1498500325513" duration="20986000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="87227000" />
+    <option name="totallyTimeSpent" value="108437000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="1440" y="23" width="1920" height="1173" extended-state="6" />
+    <frame x="-1920" y="23" width="1920" height="1173" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.08478146" sideWeight="0.4967742" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.14375988" sideWeight="0.4967742" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.37142858" sideWeight="0.50394946" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3299539" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -351,25 +490,32 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="5" />
+      <option name="time" value="6" />
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/index.html">
       <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="345">
+          <caret line="23" column="5" lean-forward="true" selection-start-line="23" selection-start-column="5" selection-end-line="23" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.html">
+      <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="690">
           <caret line="46" column="58" lean-forward="false" selection-start-line="46" selection-start-column="50" selection-end-line="46" selection-end-column="58" />
-          <folding>
-            <element signature="n#style#0;n#div#1;n#form#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#input#1;n#div#1;n#form#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#button#0;n#div#5;n#form#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#i#0;n#div#7;n#form#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="e#7404#138226#0" expanded="false" />
-            <marker date="1498259506000" expanded="true" signature="4167:4221" ph="..." />
-            <marker date="1498259506000" expanded="true" signature="4167:4946" ph="..." />
-            <marker date="1498259506000" expanded="true" signature="5897:6102" ph="..." />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -387,9 +533,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="n#!!doc" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -427,10 +570,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/.gitignore">
+    <entry file="file://$PROJECT_DIR$/uploads/css/style.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -442,28 +586,210 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/script/js/materialize.min.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <marker date="1478748772000" expanded="true" signature="100627:100656" ph="..." />
+            <marker date="1478748772000" expanded="true" signature="100747:100757" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/script/font/material-design-icons/LICENSE.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/script/css/materialize.min.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/script/css/materialize.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="361">
+          <caret line="845" column="0" lean-forward="false" selection-start-line="845" selection-start-column="0" selection-end-line="845" selection-end-column="16" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/script/js/init.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="6" column="39" lean-forward="true" selection-start-line="6" selection-start-column="39" selection-end-line="6" selection-end-column="39" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/script/font-awesome-4.3.0/less/animated.less">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="9" column="50" lean-forward="true" selection-start-line="9" selection-start-column="50" selection-end-line="9" selection-end-column="50" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/script/font-awesome-4.3.0/less/stacked.less">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/script/font-awesome-4.3.0/less/mixins.less">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/script/font-awesome-4.3.0/less/larger.less">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/script/font-awesome-4.3.0/less/icons.less">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/script/font-awesome-4.3.0/less/path.less">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/script/font-awesome-4.3.0/less/list.less">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/script/font-awesome-4.3.0/less/core.less">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="285">
+          <caret line="19" column="0" lean-forward="false" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/script/js/materialize.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1770">
+          <caret line="15" column="41" lean-forward="false" selection-start-line="15" selection-start-column="41" selection-end-line="15" selection-end-column="41" />
+          <folding>
+            <marker date="1478748772000" expanded="true" signature="184338:184367" ph="..." />
+            <marker date="1478748772000" expanded="true" signature="184628:184638" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/script/css/samsclublogo.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/script/font-awesome-4.3.0/css/font-awesome.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="9" column="95" lean-forward="true" selection-start-line="9" selection-start-column="95" selection-end-line="9" selection-end-column="95" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/script/font-awesome-4.3.0/css/font-awesome.min.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/server.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="28" column="59" lean-forward="true" selection-start-line="28" selection-start-column="59" selection-end-line="28" selection-end-column="59" />
+        <state relative-caret-position="405">
+          <caret line="27" column="16" lean-forward="true" selection-start-line="27" selection-start-column="16" selection-end-line="27" selection-end-column="16" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/view/scan.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="450">
+          <caret line="36" column="48" lean-forward="true" selection-start-line="35" selection-start-column="23" selection-end-line="36" selection-end-column="48" />
+          <folding>
+            <element signature="n#style#0;n#i#0;n#div#0;n#div#1;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="228">
-          <caret line="66" column="94" lean-forward="true" selection-start-line="66" selection-start-column="94" selection-end-line="66" selection-end-column="94" />
+        <state relative-caret-position="210">
+          <caret line="14" column="29" lean-forward="false" selection-start-line="14" selection-start-column="20" selection-end-line="14" selection-end-column="29" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/script/js/scan.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="285">
+          <caret line="33" column="71" lean-forward="false" selection-start-line="33" selection-start-column="60" selection-end-line="33" selection-end-column="71" />
           <folding>
-            <element signature="n#style#0;n#div#1;n#form#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#input#1;n#div#1;n#form#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#button#0;n#div#5;n#form#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#i#0;n#div#7;n#form#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="e#7404#138226#0" expanded="false" />
-            <marker date="1498259506000" expanded="true" signature="4167:4221" ph="..." />
-            <marker date="1498259506000" expanded="true" signature="4167:4946" ph="..." />
-            <marker date="1498259506000" expanded="true" signature="5897:6102" ph="..." />
+            <element signature="n#!!block;n#saveImage#0" expanded="false" />
+            <marker date="1498527433000" expanded="true" signature="1192:1315" ph="..." />
+            <marker date="1498527433000" expanded="true" signature="1355:3718" ph="..." />
+            <marker date="1498527433000" expanded="true" signature="1355:3719" ph="..." />
+            <marker date="1498527433000" expanded="true" signature="1390:3703" ph="..." />
+            <marker date="1498527433000" expanded="true" signature="1427:3680" ph="..." />
+            <marker date="1498527433000" expanded="true" signature="1475:1672" ph="..." />
+            <marker date="1498527433000" expanded="true" signature="1720:1899" ph="..." />
+            <marker date="1498527433000" expanded="true" signature="1946:2108" ph="..." />
+            <marker date="1498527433000" expanded="true" signature="2155:2326" ph="..." />
+            <marker date="1498527433000" expanded="true" signature="2374:2563" ph="..." />
+            <marker date="1498527433000" expanded="true" signature="2611:2782" ph="..." />
+            <marker date="1498527433000" expanded="true" signature="2830:2995" ph="..." />
+            <marker date="1498527433000" expanded="true" signature="3042:3200" ph="..." />
+            <marker date="1498527433000" expanded="true" signature="3247:3432" ph="..." />
+            <marker date="1498527433000" expanded="true" signature="3480:3661" ph="..." />
+            <marker date="1498527433000" expanded="true" signature="4552:4757" ph="..." />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/script/css/style.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="554">
+          <caret line="62" column="12" lean-forward="false" selection-start-line="62" selection-start-column="12" selection-end-line="62" selection-end-column="12" />
+          <folding />
         </state>
       </provider>
     </entry>

@@ -1,0 +1,55 @@
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no"/>
+    <title>Take a photo</title>
+
+    <!-- CSS  -->
+    <link href="css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+    <link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body>
+
+    <div class="section no-pad-bot white" id="index-banner">
+        <div class="container">
+            <br><br><br>
+            <div class="row center">
+                <i class="fa fa-id-card-o fa-5x" aria-hidden="true"></i>
+                <h5 class="header col s12 light">Scan the front side of your Driver's License</h5>
+            </div>
+            <br>
+            <div class="row center">
+                <form method="post" enctype="multipart/form-data">
+                    <label class="btn-large waves-effect waves-light" id="custom-file-upload-1">
+                        Take a picture
+                        <input type="file" id="upload_frontsideImage" onchange="updateStatus1()"/>
+                    </label>
+                    <br><br>
+                    <!--<label class="btn-large waves-effect waves-light green">-->
+                        <!--Scan the backside-->
+                        <!--<input type="file" id="upload_backsideImage" onchange="updateStatus2()"/>-->
+                    <!--</label>-->
+                    <a class="btn-large waves-effect waves-light green" type="button" onclick="uploadImage()">Submit</a>
+                </form>
+                <canvas id="my-canvas"></canvas>
+                <br>
+                <div id="spinner">
+                    <i class="fa fa-circle-o-notch fa-spin" style="font-size:120px"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="success_results"></div>
+
+    <!--  Scripts-->
+    <script src="//cdnjs.cloudflare.com/ajax/libs/webcamjs/1.0.22/webcam.min.js"></script>
+    <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <script src="js/materialize.js"></script>
+    <script src="js/init.js"></script>
+    <script src="js/scan.js"></script>
+
+</body>
+</html>
