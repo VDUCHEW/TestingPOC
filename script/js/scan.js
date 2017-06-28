@@ -74,7 +74,7 @@ function uploadImage() {
           </form>
         </div>
         <div class="center">
-            <a href="/form-complete" class="btn-large waves-effect waves-light green form-header center s16">Click to verify information</a>       
+            <a href="/form-complete" class="btn-large waves-effect waves-light green form-header center s16">Click to confirm information</a>       
         </div>`;
 
       document.querySelector('#street').value=parsedResponse.street;

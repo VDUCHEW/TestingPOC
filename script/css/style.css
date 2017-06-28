@@ -14,6 +14,9 @@ h2,
 h3 {
   margin: 0 0;
 }
+h5 {
+  font-size: 1.44rem;
+}
 form {
   margin-top: 15px;
 }
@@ -61,3 +64,7 @@ input[type="file"] {
   display: flex;
   margin: 0;
 }
+.fa-check-circle-o:before {
+  color: green;
+}
+
