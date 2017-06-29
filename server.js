@@ -37,9 +37,7 @@ app.post('/fastfill_front', upload.single('frontsideImage'), function (req, res)
   };
 
   request(options, function (error, response, body) {
-    // console.log("RESPONSE ERROR======================>", error);
     if (error) throw new Error(error);
-    // console.log("RESPONSE BODY=======================>", body);
     res.send(body);
   });
 });
@@ -47,7 +45,7 @@ app.post('/fastfill_front', upload.single('frontsideImage'), function (req, res)
 app.post('/fastfill_back', upload.single('backsideImage'), function (req, res) {
   var form = {
     'metadata': req.body['metadata'],
-    'frontsideImage': {
+    'backsideImage': {
       value: req.file.buffer,
       options: {
         filename: req.file.originalname,
@@ -69,17 +67,15 @@ app.post('/fastfill_back', upload.single('backsideImage'), function (req, res) {
   };
 
   request(options, function (error, response, body) {
-    // console.log("RESPONSE ERROR======================>", error);
     if (error) throw new Error(error);
-    // console.log("RESPONSE BODY=======================>", body);
     res.send(body);
   });
 });
 
 // ================================================================> NETVERIFY
 app.post('/netverify', function(req, res) {
-  console.log("NETVERIFY REQUIRE BODY =====================>", req);
-  console.log("NETVERIFY REQUIRE BODY =====================>", req.body['frontsideImage']);
+  //console.log("NETVERIFY REQUIRE BODY =====================>", req);
+  console.log("NETVERIFY REQUIRE BODY =====================>", req.body);
   //UNDEFINED
 
   var options = {
@@ -94,7 +90,7 @@ app.post('/netverify', function(req, res) {
         'user-agent': 'walmart walmart/1.0.0' },
     body:
       { merchantIdScanReference: 'TestScanReference',
-        frontsideImage: "Request IMG",
+        frontsideImage: req.body.frontsideImage,
         successUrl: 'https://hookb.in/E7R0BeW8',
         errorUrl: 'https://hookb.in/E7R0BeW8',
         callbackUrl: 'https://requestb.in/1c0hrd11' },
@@ -102,9 +98,8 @@ app.post('/netverify', function(req, res) {
   };
 
   request(options, function (error, response, body) {
-    console.log("RESPONSE ERROR=======================>", error);
     if (error) throw new Error(error);
-    console.log("RESPONSE BODY=======================>", body);
+    res.send(body);
   });
 });
 
