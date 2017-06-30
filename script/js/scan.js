@@ -1,12 +1,10 @@
 function uploadImage() {
   const form = new FormData();
-  const frontImage = $('#upload_frontsideImage')[0].files[0];
   form.append("metadata", "{\"type\":\"DRIVING_LICENSE\", \"country\":\"USA\"}");
-  frontImage ? form.append("frontsideImage", $('#upload_frontsideImage')[0].files[0])
-    : form.append("backsideImage", $('#upload_backsideImage')[0].files[0]);
+  form.append("backsideImage", $('#upload_backsideImage')[0].files[0]);
 
   document.getElementById('spinner').style.display = 'block';
-  const fastFillURl = frontImage ? "/fastfill_front" : "/fastfill_back";
+  const fastFillURl = "/fastfill_back";
 
   const settings = {
     "async": true,
@@ -172,14 +170,10 @@ function callNetVerify() {
   $.ajax(settings).done(function (response) {
     $("#success_results").append(response);
     console.log(response);
-    response.status(200).end();
   });
 }
 
-function updateStatus1() {
-  document.getElementById('custom-file-upload-1').style.background = "#4CAF50";
+function updateStatus() {
+  document.getElementById('file-uploaded').style.display = "none";
+  document.getElementById('submitBtn').style.visibility = "visible";
 }
-
- // function updateStatus2() {
- //   document.getElementById('custom-file-upload-1').style.background = "#4CAF50";
- // }

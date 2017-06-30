@@ -23,10 +23,10 @@ app.get('/form-complete', function (req, res) {
 app.use(bodyParser.json({limit: '100mb'}));
 app.use(bodyParser.urlencoded({limit: '100mb', extended: true, parameterLimit: 50000}));
 
-app.post('/fastfill_front', upload.single('frontsideImage'), function (req, res) {
+app.post('/fastfill_back', upload.single('backsideImage'), function (req, res) {
   var form = {
     'metadata': req.body['metadata'],
-    'frontsideImage': {
+    'backsideImage': {
       value: req.file.buffer,
       options: {
         filename: req.file.originalname,
@@ -48,9 +48,7 @@ app.post('/fastfill_front', upload.single('frontsideImage'), function (req, res)
   };
 
   request(options, function (error, response, body) {
-    // console.log("RESPONSE ERROR======================>", error);
     if (error) throw new Error(error);
-    // console.log("RESPONSE BODY=======================>", body);
     res.send(body);
   });
 });
@@ -80,18 +78,13 @@ app.post('/fastfill_back', upload.single('backsideImage'), function (req, res) {
   };
 
   request(options, function (error, response, body) {
-    // console.log("RESPONSE ERROR======================>", error);
     if (error) throw new Error(error);
-    // console.log("RESPONSE BODY=======================>", body);
     res.send(body);
   });
 });
 
 // ================================================================> NETVERIFY
 app.post('/netverify', function(req, res) {
-  console.log("NETVERIFY REQUIRE BODY =====================>", req);
-  console.log("NETVERIFY REQUIRE BODY =====================>", req.body['frontsideImage']);
-  //UNDEFINED
 
   var options = {
     method: 'POST',
@@ -113,9 +106,8 @@ app.post('/netverify', function(req, res) {
   };
 
   request(options, function (error, response, body) {
-    console.log("RESPONSE ERROR=======================>", error);
     if (error) throw new Error(error);
-    console.log("RESPONSE BODY=======================>", body);
+    res.send(body);
   });
 });
 
