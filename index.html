@@ -23,15 +23,15 @@
             </div>
             <br>
             <div class="row center">
-                <a href="/scan" class="btn-large waves-effect waves-light green">Sam's Plus</a>
+                <a href="/scan" class="btn-large waves-effect waves-light green" onclick="selectMembershipType('SAVINGS', true)">Sam's Plus</a>
             </div>
             <br>
             <div class="row center">
-                <a href="/scan" class="btn-large waves-effect waves-light green">Sam's Business</a>
+                <a href="/scan" class="btn-large waves-effect waves-light green" onclick="selectMembershipType('BUSINESS', false)">Sam's Business</a>
             </div>
             <br>
             <div class="row center">
-                <a href="/scan" class="btn-large waves-effect waves-light green">Sam's Savings</a>
+                <a href="/scan" class="btn-large waves-effect waves-light green" onclick="selectMembershipType('SAVINGS', false)">Sam's Savings</a>
             </div>
             <br>
         </div>
@@ -41,6 +41,7 @@
 <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
 <script src="js/materialize.js"></script>
 <script src="js/init.js"></script>
+<script src="js/membership-type.js"></script>
 
 </body>
 

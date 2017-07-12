@@ -22,8 +22,6 @@ function uploadImage() {
     document.getElementById('index-banner').style.display = 'none';
     const parsedResponse = JSON.parse(response);
 
-    console.log(parsedResponse);
-
     document.getElementById('success_results').innerHTML =
        `<div class="center container">   
           <form class="col s12">
@@ -36,15 +34,15 @@ function uploadImage() {
                 <input type="text" class="validate" value=${parsedResponse.lastName}>
                 <label class="active">Last Name</label>
               </div>
-              <div class="input-field col s6">
+              <div class="input-field col s5">
                 <input type="text" class="validate" value=${parsedResponse.dob}>
                 <label class="active" for="dob">DOB</label>
               </div>
-              <div class="input-field col s6">
+              <div class="input-field col s3">
                 <input type="text" class="validate" value=${parsedResponse.gender}>
                 <label class="active" for="gender">Gender</label>
               </div>
-              <div class="input-field col s12">
+              <div class="input-field col s4">
                 <input type="text" class="validate" value=${parsedResponse.expiry}>
                 <label class="active" for="expiration_date">Expiration Date</label>
               </div>
@@ -68,6 +66,14 @@ function uploadImage() {
                 <input type="text" class="validate" value=${parsedResponse.issuingCountry}>
                 <label class="active" for="country">Country</label>
               </div>
+              <div class="input-field col s4">
+                <input id="area_code" type="tel" class="validate">
+                <label for="area_code" data-error="wrong" data-success="right">Area Code</label>
+              </div>              
+              <div class="input-field col s8">
+                <input id="icon_telephone" type="tel" class="validate">
+                <label for="icon_telephone" data-error="wrong" data-success="right">Telephone</label>
+              </div>
             </div>     
           </form>
         </div>
@@ -76,62 +82,41 @@ function uploadImage() {
         </div>`;
 
       document.querySelector('#street').value=parsedResponse.street;
+
+      const formData = JSON.stringify({
+        "payload": {
+          "membership": JSON.parse(sessionStorage.getItem('membership-type')),
+          "member": {
+            "memberName": {
+              "firstName": parsedResponse.firstName,
+              "lastName": parsedResponse.lastName
+            },
+            "mobilePhone": {
+              "completeNumber": "",
+              "extension": "1",
+              "areaCode": "1",
+              "type": "MOBILE"
+            },
+            "dateOfBirth": parsedResponse.dob,
+            "mailingAddress": {
+              "addressLineOne": document.querySelector('#street').value,
+              "city": parsedResponse.city,
+              "stateOrProvinceCode": parsedResponse.state,
+              "postalCode": parsedResponse.postalCode,
+              "countryCode": parsedResponse.issuingCountry
+            },
+            "homeEmail": "one1@test.com",
+            "paidStatus": "UNPAID"
+          },
+          "password":"member123"
+        }
+      });
+
+      sessionStorage.setItem('form-data', formData);
+      sessionStorage.getItem('form-data');
+
+      console.log(sessionStorage.getItem('form-data'));
   });
-}
-
-
-
-function preview_snapshot() {
-  // freeze camera so user can preview pic
-  Webcam.freeze();
-
-  // swap button sets
-  document.getElementById('pre_take_buttons').style.display = 'none';
-  document.getElementById('post_take_buttons').style.display = '';
-}
-
-function cancel_preview() {
-  // cancel preview freeze and return to live camera feed
-  Webcam.unfreeze();
-
-  // swap buttons back
-  document.getElementById('pre_take_buttons').style.display = '';
-  document.getElementById('post_take_buttons').style.display = 'none';
-}
-
-function save_photo() {
-  // actually snap photo (from preview freeze) and display it
-  Webcam.snap( function(data_uri) {
-    // display results in page
-    document.getElementById('results').innerHTML =
-      `<h2>Driver Licence:</h2>
-        <img id="img-tag" src="${data_uri}"/>
-        <form>
-          <input type="button" value="Save photo in Desktop" onClick="saveImage()"/>
-          <input type="button" id="netverify" value="Send to NetVerify" onClick="callNetVerify()"/>
-        </form>`;
-    document.getElementById('results').style.display = 'block';
-
-    // swap buttons back
-    document.getElementById('pre_take_buttons').style.display = '';
-    document.getElementById('post_take_buttons').style.display = 'none';
-  } );
-}
-
-function saveImage() {
-  const canvas = document.getElementById("my-canvas");
-  const ctx = canvas.getContext("2d");
-  ctx.canvas.width  = 320;
-  ctx.canvas.height = 240;
-
-  const img = document.getElementById("img-tag");
-  ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
-  const convertedImg = canvas.toDataURL("image/png", 1.0);
-  const a  = document.createElement('a');
-
-  a.href = convertedImg;
-  a.download = 'image.png';
-  a.click()
 }
 
 function callNetVerify() {
