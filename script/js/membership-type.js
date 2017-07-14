@@ -9,3 +9,4 @@ function selectMembershipType(membershipType, plusStatus) {
   sessionStorage.setItem('membership-type', JSON.stringify(Object.assign(membership,
     {"membershipType": membershipType, "plusStatus": plusStatus })));
 }
+

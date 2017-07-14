@@ -22,7 +22,9 @@
             <div class="row center">
                 <i class="fa fa-5x fa-address-card-o col s2" aria-hidden="true"></i>
                 <i class="fa fa-check-circle-o fa-3x col s2" aria-hidden="true"></i>
-                <h5 class="header light col s8">Your membership </n> #01234567891234567</h5>
+                <h5 class="header light col s8">Your membership </n>
+                    <div id="membershipID">#</div>
+                </h5>
             </div>
             <br>
             <h5 class="header col s12 light center">Pickup your Membership card at the Member Services desk</h5>
@@ -40,6 +42,10 @@
     <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
     <script src="js/materialize.js"></script>
     <script src="js/init.js"></script>
+    <script>
+      window.onload = function() {document.getElementById("membershipID").append(sessionStorage.getItem('membershipID'))}
+    </script>
+
 </body>
 
 </html>
