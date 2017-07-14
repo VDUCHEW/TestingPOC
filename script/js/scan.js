@@ -81,18 +81,14 @@ function uploadImage() {
               <div class="input-field col s12">
                 <input id="country" type="text" class="validate" value=${parsedResponse.issuingCountry}>
                 <label class="active" for="country">Country</label>
-              </div>
-              <div class="input-field col s4">
-                <input id="area_code" type="tel" class="validate">
-                <label for="area_code" data-error="wrong" data-success="right">Area Code</label>
-              </div>              
-              <div class="input-field col s8">
+              </div>      
+              <div class="input-field col s12">
                 <input id="icon_telephone" type="tel" class="validate">
-                <label for="icon_telephone" data-error="wrong" data-success="right">Telephone</label>
+                <label for="icon_telephone" data-error="wrong" data-success="right">Phone number</label>
               </div>
             </div> 
             <div class="center">
-                <button class="btn-large waves-effect waves-light green form-header center s16" type="submit">Click to Confirm information</button>       
+                <button class="btn-large waves-effect waves-light green center s12" type="submit">Click to Confirm</button>       
             </div>
           </form>
         </div>`;
@@ -175,5 +171,5 @@ function uploadImage() {
 
 function updateStatus() {
   document.getElementById('file-uploaded').style.display = "none";
-  document.getElementById('submitBtn').style.visibility = "visible";
+  document.getElementById('submitBtn').style.display = "unset";
 }
